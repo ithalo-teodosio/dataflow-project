@@ -8,7 +8,11 @@ print("Iniciando o processo de extração...")
 
 base_dir = os.path.dirname(os.getcwd())
 pdf_path = os.path.join(base_dir, "web_scraping", "arquivos", "Anexo I.pdf")
-output_dir = os.path.join(os.getcwd(), "transformacao_dados", "output")
+output_dir = os.path.join(base_dir, "transformacao_dados", "output")
+
+# Garante que o diretório de saída exista
+os.makedirs(output_dir, exist_ok=True)
+
 
 # Verifica se o PDF existe
 if not os.path.exists(pdf_path):
