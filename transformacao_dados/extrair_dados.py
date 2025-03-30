@@ -3,18 +3,14 @@ import pandas as pd
 import os
 import zipfile
 
-# Configurações
 print("Iniciando o processo de extração...")
 
 base_dir = os.path.dirname(os.getcwd())
 pdf_path = os.path.join(base_dir, "web_scraping", "arquivos", "Anexo I.pdf")
 output_dir = os.path.join(base_dir, "transformacao_dados", "output")
 
-# Garante que o diretório de saída exista
 os.makedirs(output_dir, exist_ok=True)
 
-
-# Verifica se o PDF existe
 if not os.path.exists(pdf_path):
     print("ERRO: Arquivo 'Anexo I.pdf' não encontrado na pasta 'arquivos'")
     print("Certifique-se que:")
@@ -33,11 +29,9 @@ with pdfplumber.open(pdf_path) as pdf:
 
 print("Processando os dados...")
 
-# Pega o cabeçalho (primeira linha) e deixa fora da linha de dados
 cabecalho = dados[0]
 linhas = dados[1:]
 
-# Exclui cabeçalhos repetidos dentro do PDF
 linhas = [linha for linha in linhas if linha[0] != cabecalho[0]]
 
 df = pd.DataFrame(linhas, columns=cabecalho)
@@ -47,7 +41,6 @@ df.replace({
     "AMB": "Ambulatorial"
 }, inplace=True)
 
-# Caminho para salvar
 csv_path = os.path.join(output_dir, "dados.csv")
 zip_path = os.path.join(output_dir, "Teste_Ithalo.zip")
 

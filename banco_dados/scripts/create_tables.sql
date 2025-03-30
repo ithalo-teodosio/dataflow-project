@@ -1,0 +1,22 @@
+CREATE TABLE operadoras (
+    registro_ans VARCHAR(10) PRIMARY KEY,
+    cnpj VARCHAR(20),
+    razao_social TEXT,
+    nome_fantasia TEXT,
+    modalidade TEXT,
+    logradouro TEXT,
+    numero TEXT,
+    complemento TEXT,
+    bairro TEXT,
+    cidade TEXT,
+    uf CHAR(2),
+    cep VARCHAR(10),
+    ddd VARCHAR(3),
+    telefone VARCHAR(15),
+    fax VARCHAR(15),
+    email TEXT,
+    representante TEXT,
+    cargo_representante TEXT,
+    regiao_comercializacao TEXT,
+    data_registro_ans DATE
+);
