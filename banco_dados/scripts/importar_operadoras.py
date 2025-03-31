@@ -9,7 +9,7 @@ df = pd.read_csv(caminho_csv, encoding="utf-8", sep=";")
 conn = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="himegami110395",
+    password="SUA_SENHA",
     database="ans_teste"
 )
 
