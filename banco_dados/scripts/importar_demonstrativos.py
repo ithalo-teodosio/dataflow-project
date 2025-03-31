@@ -8,7 +8,7 @@ diretorio_base = Path("C:/Users/ithal/OneDrive/Área de Trabalho/Ithalo/Projetos
 conn = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="himegami110395",
+    password="SUA_SENHA",
     database="ans_teste"
 )
 
